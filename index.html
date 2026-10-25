@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>taaxz store | am prem 1 tahun</title>
+<meta name="description" content="Alight Motion Premium 1 tahun, Rp 15.000. Garansi, resmi 100%, aman dan terpercaya, cepat, dan responsif. Pesan lewat WhatsApp.">
+<meta name="theme-color" content="#1b0a45">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+<style>
+/* ========== Design tokens ========== */
+:root{
+  --ink:#ffffff;
+  --ink-soft:rgba(255,255,255,.78);
+  --ink-dim:rgba(255,255,255,.62);
+  --deep:#1b0a45;
+  --violet:#6d4cff;
+  --pink:#ff3d9a;
+  --cyan:#22d3ee;
+  --glass:rgba(255,255,255,.11);
+  --glass-strong:rgba(255,255,255,.18);
+  --glass-edge:rgba(255,255,255,.32);
+  --radius:26px;
+  --radius-sm:16px;
+  --max:1120px;
+  --font:"Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* ========== Base ========== */
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;font-family:var(--font);color:var(--ink);background:var(--deep);
+  line-height:1.55;-webkit-font-smoothing:antialiased;min-height:100vh;
+  overflow-x:hidden;
+}
+img{display:block;max-width:100%}
+h1,h2,h3,p{margin:0}
+a{color:inherit;text-decoration:none}
+[hidden]{display:none!important}
+.container{width:min(100% - 32px, var(--max));margin-inline:auto}
+.dim{color:var(--ink-soft)}
+:focus-visible{outline:3px solid var(--cyan);outline-offset:3px}
+
+/* Latar gradien + gumpalan warna di belakang kaca */
+.bg{
+  position:fixed;inset:0;z-index:-2;
+  background:linear-gradient(145deg,#1b0a45 0%,#4c1d95 32%,#a21caf 62%,#be185d 100%);
+}
+.bg::after{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(60% 50% at 85% 10%,rgba(34,211,238,.38),transparent 70%),
+    radial-gradient(50% 45% at 8% 85%,rgba(255,61,154,.35),transparent 70%);
+}
+.blob{
+  position:fixed;z-index:-1;border-radius:50%;filter:blur(60px);opacity:.55;pointer-events:none;
+  animation:drift 22s ease-in-out infinite alternate;
+}
+.blob.b1{width:340px;height:340px;background:var(--cyan);top:12%;left:-90px}
+.blob.b2{width:420px;height:420px;background:var(--pink);bottom:-120px;right:-100px;animation-delay:-8s}
+@keyframes drift{to{transform:translate(60px,-50px) scale(1.15)}}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important;animation:none!important}
+}
+
+/* ========== Liquid glass ========== */
+.glass{
+  position:relative;
+  background:linear-gradient(135deg,rgba(255,255,255,.2),rgba(255,255,255,.06));
+  -webkit-backdrop-filter:blur(26px) saturate(190%);
+  backdrop-filter:blur(26px) saturate(190%);
+  border:1px solid var(--glass-edge);
+  border-radius:var(--radius);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.55),
+    inset 0 -1px 0 rgba(255,255,255,.12),
+    inset 0 0 22px rgba(255,255,255,.07),
+    0 18px 50px rgba(10,2,40,.35);
+  overflow:hidden;
+}
+/* kilau cahaya di sudut atas, ciri khas liquid glass */
+.glass::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(120% 70% at 12% -10%,rgba(255,255,255,.38),transparent 55%);
+  opacity:.7;
+}
+.glass > *{position:relative}
+
+/* ========== Buttons ========== */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  border:0;cursor:pointer;font:inherit;font-size:16px;font-weight:700;
+  padding:14px 28px;border-radius:999px;transition:transform .2s, box-shadow .2s, background .2s;
+}
+.btn-primary{
+  background:linear-gradient(135deg,#ffffff,#ffd9ec);color:#3b0f6e;
+  box-shadow:0 10px 28px rgba(255,61,154,.38), inset 0 -2px 0 rgba(109,76,255,.18);
+}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(255,61,154,.5)}
+.btn-primary:disabled{opacity:.45;cursor:not-allowed;transform:none;box-shadow:none}
+.btn-glass{
+  background:var(--glass-strong);color:var(--ink);
+  border:1px solid var(--glass-edge);
+  -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
+}
+.btn-glass:hover{background:rgba(255,255,255,.28)}
+.btn-link{background:none;color:var(--ink);padding-inline:12px;text-decoration:underline;text-underline-offset:4px}
+.btn-sm{font-size:14px;padding:10px 20px}
+
+/* ========== Header ========== */
+.site-header{position:sticky;top:12px;z-index:50;margin-top:12px}
+.nav{
+  display:flex;align-items:center;justify-content:space-between;
+  height:60px;padding:0 10px 0 22px;border-radius:999px;
+}
+.logo{font-weight:800;font-size:17px;letter-spacing:-.01em}
+.nav nav{display:flex;gap:6px;font-size:14px;font-weight:500}
+.nav nav a{padding:8px 14px;border-radius:999px;color:var(--ink-soft);transition:.2s}
+.nav nav a:hover{background:rgba(255,255,255,.16);color:var(--ink)}
+@media (max-width:560px){.nav nav a:nth-child(3){display:none}.nav{padding-left:18px}}
+
+/* ========== Hero ========== */
+.hero{padding:56px 0 72px}
+.hero-grid{display:grid;gap:36px;align-items:center}
+.hero h1{
+  font-size:clamp(2.3rem,7.2vw,4.1rem);line-height:1.04;
+  letter-spacing:-.04em;font-weight:800;margin-bottom:18px;
+}
+.lead{font-size:clamp(1.02rem,2.4vw,1.2rem);color:var(--ink-soft);max-width:33em;margin-bottom:26px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px}
+.chip{
+  display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;
+  padding:7px 14px;border-radius:999px;
+  background:rgba(255,255,255,.14);border:1px solid var(--glass-edge);
+  -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
+}
+.hero-buy{display:flex;flex-wrap:wrap;align-items:center;gap:14px 18px}
+.hero-price{font-size:clamp(2rem,6vw,2.8rem);font-weight:800;letter-spacing:-.03em;line-height:1}
+.hero-price small{display:block;font-size:13px;font-weight:500;letter-spacing:0;color:var(--ink-dim);margin-bottom:4px}
+.hero-note{font-size:13px;margin-top:18px;color:var(--ink-dim)}
+
+.img-wrap{position:relative;overflow:hidden;border-radius:calc(var(--radius) - 8px)}
+.photo-frame{padding:10px}
+.img-wrap img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover}
+
+@media (min-width:880px){
+  .hero{padding:96px 0 104px}
+  .hero-grid{grid-template-columns:1.05fr .95fr;gap:64px}
+}
+
+/* ========== Sections ========== */
+.section{padding:64px 0}
+.section-head{text-align:center;max-width:640px;margin:0 auto 40px}
+.section-head h2{font-size:clamp(1.8rem,5vw,2.7rem);letter-spacing:-.035em;line-height:1.1;margin-bottom:10px;font-weight:800}
+.section-head p{color:var(--ink-soft)}
+
+/* Kotak-kotak (bento) */
+.bento{
+  display:grid;gap:14px;
+  grid-template-columns:repeat(2,1fr);
+}
+.tile{padding:22px 20px;display:grid;gap:8px;align-content:start;min-height:170px}
+.tile.wide{grid-column:span 2}
+.tile svg{
+  width:34px;height:34px;margin-bottom:6px;
+  stroke:#fff;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;
+}
+.tile h3{font-size:19px;letter-spacing:-.015em;font-weight:800}
+.tile p{font-size:14.5px;color:var(--ink-soft)}
+.tile .icon-bubble{
+  width:52px;height:52px;border-radius:16px;display:grid;place-items:center;margin-bottom:6px;
+  background:linear-gradient(135deg,rgba(34,211,238,.55),rgba(255,61,154,.55));
+  border:1px solid var(--glass-edge);
+}
+.tile .icon-bubble svg{margin:0}
+@media (min-width:760px){
+  .bento{grid-template-columns:repeat(6,1fr);gap:18px}
+  .tile{grid-column:span 2;min-height:200px;padding:26px 24px}
+  .tile.wide{grid-column:span 4}
+}
+
+/* Cara pesan */
+.steps{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));counter-reset:step}
+.step{padding:22px 20px;display:grid;gap:6px;align-content:start}
+.step::after{
+  counter-increment:step;content:counter(step);
+  position:absolute;top:14px;right:18px;font-size:44px;font-weight:800;line-height:1;
+  color:rgba(255,255,255,.2);
+}
+.step h3{font-size:17px;font-weight:800;padding-right:36px}
+.step p{font-size:14.5px;color:var(--ink-soft)}
+.pay-box{margin-top:18px;padding:22px 24px;display:grid;gap:6px}
+.pay-box h3{font-size:17px;font-weight:800}
+.pay-box p{color:var(--ink-soft);font-size:15px;white-space:pre-line}
+
+/* Katalog */
+.grid{
+  display:grid;gap:20px;justify-content:center;
+  grid-template-columns:repeat(auto-fit,minmax(260px,400px));
+}
+.card{padding:12px;transition:transform .25s}
+.card:hover{transform:translateY(-4px)}
+.card-body{padding:18px 10px 10px;display:grid;gap:6px}
+.card h3{font-size:20px;letter-spacing:-.015em;font-weight:800}
+.card .dim{font-size:14.5px;min-height:44px}
+.card-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:14px}
+.price{font-size:22px;font-weight:800;letter-spacing:-.02em}
+
+/* ========== Footer ========== */
+.site-footer{padding:32px 0 110px;font-size:13px;color:var(--ink-dim)}
+.footer-box{padding:18px 24px;display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between;align-items:center}
+.admin-link{
+  background:none;border:0;font:inherit;color:var(--ink-dim);
+  opacity:.7;cursor:pointer;padding:4px 0;
+}
+.admin-link:hover{opacity:1}
+@media (min-width:760px){.site-footer{padding-bottom:48px}}
+
+/* Bar pesan khusus HP */
+.mobile-bar{
+  position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:55;
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:10px 10px 10px 20px;border-radius:999px;
+}
+.mobile-bar .mb-price{font-weight:800;font-size:18px;line-height:1.1}
+.mobile-bar .mb-price small{display:block;font-size:11px;font-weight:500;color:var(--ink-dim)}
+@media (min-width:760px){.mobile-bar{display:none}}
+
+/* ========== Admin mode ========== */
+body.admin{padding-bottom:140px}
+body.admin .mobile-bar{display:none}
+body.admin [contenteditable="true"]{
+  outline:1px dashed rgba(255,255,255,.7);outline-offset:4px;
+  border-radius:4px;cursor:text;
+}
+body.admin [contenteditable="true"]:focus{outline:2px solid var(--cyan);background:rgba(34,211,238,.12)}
+body.admin .img-wrap{cursor:pointer}
+body.admin .img-wrap::after{
+  content:"Klik untuk ganti foto produk";
+  position:absolute;inset:auto 12px 12px auto;
+  background:rgba(27,10,69,.88);color:#fff;font-size:12px;font-weight:700;
+  padding:7px 14px;border-radius:999px;pointer-events:none;
+}
+.admin-bar{
+  position:fixed;left:50%;bottom:16px;transform:translateX(-50%);
+  width:min(94vw,720px);z-index:60;
+  display:flex;flex-wrap:wrap;align-items:center;gap:10px 10px;
+  padding:12px 16px;border-radius:22px;font-size:13px;
+}
+.admin-bar .hint{flex:1 1 200px;color:var(--ink-soft)}
+
+/* ========== Modal (login & pesan) ========== */
+.modal{
+  position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;
+  padding:16px;background:rgba(15,4,45,.5);
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+  overflow-y:auto;
+}
+.modal-box{
+  width:min(100%,440px);padding:26px;display:grid;gap:14px;
+  background:linear-gradient(135deg,rgba(255,255,255,.26),rgba(255,255,255,.1));
+  max-height:calc(100vh - 32px);overflow-y:auto;
+}
+.modal-box h3{font-size:22px;letter-spacing:-.02em;font-weight:800}
+.modal-box input[type="password"]{
+  width:100%;padding:13px 16px;font:inherit;font-size:16px;color:#fff;
+  background:rgba(255,255,255,.14);border:1px solid var(--glass-edge);border-radius:14px;
+}
+.modal-box input::placeholder{color:var(--ink-dim)}
+.modal-box .error{color:#ffd1dc;font-size:13px;min-height:18px;font-weight:500}
+.modal-actions{display:flex;justify-content:flex-end;gap:10px;flex-wrap:wrap}
+
+/* Modal pesan */
+.order-box{width:min(100%,480px)}
+.order-sum{display:flex;gap:14px;align-items:center;padding:12px;border-radius:var(--radius-sm);background:rgba(255,255,255,.12);border:1px solid var(--glass-edge)}
+.order-sum img{width:64px;height:64px;border-radius:12px;object-fit:cover;flex:none}
+.order-sum strong{display:block;font-size:15px;line-height:1.3}
+.order-sum span{font-weight:800;font-size:18px}
+.notice{padding:14px 16px;border-radius:var(--radius-sm);background:linear-gradient(135deg,rgba(34,211,238,.28),rgba(109,76,255,.28));border:1px solid var(--glass-edge);font-size:14px}
+.notice b{display:block;font-size:15px;margin-bottom:4px}
+.notice p{white-space:pre-line;color:#fff}
+.reminder{padding:14px 16px;border-radius:var(--radius-sm);background:rgba(255,255,255,.12);border:1px solid var(--glass-edge);font-size:14px}
+.reminder b{display:block;font-size:15px;margin-bottom:4px}
+.reminder p{color:var(--ink-soft)}
+.order-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.order-actions .btn{width:100%}
+.order-hint{font-size:12.5px;color:var(--ink-dim);text-align:center}
+@media (max-width:560px){
+  .modal{align-items:flex-end;padding:0}
+  .modal-box{width:100%;max-height:92vh;border-radius:28px 28px 0 0;padding-bottom:calc(26px + env(safe-area-inset-bottom))}
+}
+
+/* Toast */
+.toast{
+  position:fixed;left:50%;bottom:92px;transform:translate(-50%,20px);
+  background:rgba(27,10,69,.92);color:#fff;font-size:14px;font-weight:500;
+  padding:11px 22px;border-radius:999px;z-index:120;border:1px solid var(--glass-edge);
+  opacity:0;pointer-events:none;transition:.3s;max-width:92vw;text-align:center;
+}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+body.admin .toast{bottom:150px}
+@media (min-width:760px){.toast{bottom:28px}body.admin .toast{bottom:150px}}
+</style>
+</head>
+
+<body>
+<div class="bg"></div>
+<div class="blob b1"></div>
+<div class="blob b2"></div>
+
+<!-- ========== HEADER ========== -->
+<div class="site-header">
+  <div class="container">
+    <div class="nav glass">
+      <a href="#top" class="logo"><span data-edit="logo">taaxz store</span></a>
+      <nav>
+        <a href="#keunggulan">Keunggulan</a>
+        <a href="#cara-pesan">Cara pesan</a>
+        <a href="#katalog">Produk</a>
+      </nav>
+    </div>
+  </div>
+</div>
+
+<main>
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="top">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <div class="chips">
+          <span class="chip">Garansi</span>
+          <span class="chip">Resmi 100%</span>
+          <span class="chip">Aktif 1 tahun</span>
+        </div>
+        <h1 data-edit="hero-title">Alight Motion Premium 1 tahun, ekspor tanpa watermark.</h1>
+        <p class="lead" data-edit="hero-desc">Buka library efek premium Alight Motion selama 12 bulan penuh. Animasi, motion graphic, dan edit video, semuanya dari HP.</p>
+        <div class="hero-buy">
+          <div class="hero-price"><small>Harga paket 1 tahun</small><span data-mirror="price">Rp 15.000</span></div>
+          <button type="button" class="btn btn-primary" data-buy>Pesan sekarang</button>
+          <a class="btn btn-link" href="#cara-pesan">Lihat cara pesan</a>
+        </div>
+        <p class="hero-note" data-edit="hero-note">Pemesanan langsung lewat WhatsApp.</p>
+      </div>
+      <div class="glass photo-frame">
+        <div class="img-wrap">
+          <img data-img="product" data-c1="#ff3d9a" data-c2="#6d4cff" alt="Alight Motion Premium 1 tahun">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== KEUNGGULAN ========== -->
+  <section class="section" id="keunggulan">
+    <div class="container">
+      <div class="section-head">
+        <h2 data-edit="features-title">Kenapa beli di taaxz store</h2>
+        <p data-edit="features-sub">Lima alasan kenapa pelanggan tenang waktu pesan.</p>
+      </div>
+
+      <div class="bento">
+        <div class="glass tile wide">
+          <div class="icon-bubble"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <h3 data-edit="f1-title">Garansi</h3>
+          <p data-edit="f1-desc">Pesananmu bergaransi. Kalau ada kendala selama masa aktif, hubungi kami dan kami bantu sampai beres.</p>
+        </div>
+        <div class="glass tile">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="5.5"/><path d="M9.5 9l2 2 3.5-3.5"/><path d="M8.5 13.5L7 21l5-2.5 5 2.5-1.5-7.5"/></svg>
+          <h3 data-edit="f2-title">Resmi 100%</h3>
+          <p data-edit="f2-desc">Premium resmi Alight Motion untuk 1 tahun penuh.</p>
+        </div>
+        <div class="glass tile">
+          <svg viewBox="0 0 24 24"><rect x="4" y="10.5" width="16" height="10" rx="2.5"/><path d="M8 10.5V8a4 4 0 018 0v2.5"/><circle cx="12" cy="15.5" r="1.2"/></svg>
+          <h3 data-edit="f3-title">Aman dan terpercaya</h3>
+          <p data-edit="f3-desc">Transaksi jelas lewat WhatsApp, dengan bukti transfer di setiap pesanan.</p>
+        </div>
+        <div class="glass tile">
+          <svg viewBox="0 0 24 24"><path d="M13 2L4.5 13.5H11L10 22l8.5-11.5H12z"/></svg>
+          <h3 data-edit="f4-title">Cepat</h3>
+          <p data-edit="f4-desc">Pesanan diproses begitu bukti transfermu kami terima.</p>
+        </div>
+        <div class="glass tile">
+          <svg viewBox="0 0 24 24"><rect x="3" y="5" width="13" height="10" rx="1.8"/><rect x="14" y="9" width="7" height="12" rx="1.8"/></svg>
+          <h3 data-edit="f5-title">Responsif</h3>
+          <p data-edit="f5-desc">Admin siap membalas pertanyaanmu lewat WhatsApp.</p>
+        </div>
+        <div class="glass tile wide">
+          <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M10 9.5v5l4.5-2.5z"/></svg>
+          <h3 data-edit="f6-title">Ekspor tanpa watermark</h3>
+          <p data-edit="f6-desc">Hasil akhir bersih, siap diunggah ke TikTok, Reels, atau YouTube.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CARA PESAN ========== -->
+  <section class="section" id="cara-pesan">
+    <div class="container">
+      <div class="section-head">
+        <h2 data-edit="how-title">Cara pesan</h2>
+        <p data-edit="how-sub">Empat langkah, selesai dalam beberapa menit.</p>
+      </div>
+
+      <div class="steps">
+        <div class="glass step">
+          <h3 data-edit="s1-title">Klik Pesan</h3>
+          <p data-edit="s1-desc">Tekan Pesan sekarang, baca info pembayaran, lalu tekan Pesan untuk lanjut ke WhatsApp.</p>
+        </div>
+        <div class="glass step">
+          <h3 data-edit="s2-title">Pilih pembayaran</h3>
+          <p data-edit="s2-desc">Bayar lewat DANA, QRIS, atau COD. Nomor tujuan dikirim admin di WhatsApp.</p>
+        </div>
+        <div class="glass step">
+          <h3 data-edit="s3-title">Kirim bukti transfer</h3>
+          <p data-edit="s3-desc">Kirim foto atau screenshot bukti transfermu di chat WhatsApp.</p>
+        </div>
+        <div class="glass step">
+          <h3 data-edit="s4-title">Pesanan diproses</h3>
+          <p data-edit="s4-desc">Setelah bukti transfer kami terima, pesananmu langsung diproses.</p>
+        </div>
+      </div>
+
+      <div class="glass pay-box">
+        <h3 data-edit="pay-title">Metode pembayaran</h3>
+        <p data-edit="pay-info">Pembayaran bisa lewat DANA, QRIS, dan COD.
+Nomor tujuan pembayaran akan dialihkan ke WhatsApp.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== KATALOG ========== -->
+  <section class="section" id="katalog">
+    <div class="container">
+      <div class="section-head">
+        <h2 data-edit="catalog-title">Satu paket. Satu tahun penuh.</h2>
+        <p data-edit="catalog-sub">Pesan sekarang, bayar, dan kirim buktinya lewat WhatsApp.</p>
+      </div>
+      <div class="grid" id="productGrid"></div>
+    </div>
+  </section>
+</main>
+
+<!-- ========== FOOTER ========== -->
+<footer class="site-footer" id="kontak">
+  <div class="container">
+    <div class="glass footer-box">
+      <span data-edit="footer-copy">© 2026 taaxz store | am prem 1 tahun</span>
+      <span data-edit="footer-contact">WhatsApp +62 821-9490-7502</span>
+      <button type="button" class="admin-link" id="adminLink">Admin Login</button>
+    </div>
+  </div>
+</footer>
+
+<!-- ========== BAR PESAN (HP) ========== -->
+<div class="glass mobile-bar" id="mobileBar">
+  <div class="mb-price"><small>Premium 1 tahun</small><span data-mirror="price">Rp 15.000</span></div>
+  <button type="button" class="btn btn-primary btn-sm" data-buy>Pesan sekarang</button>
+</div>
+
+<!-- ========== ADMIN UI ========== -->
+<div class="glass admin-bar" id="adminBar" hidden>
+  <span class="hint">Mode Admin · klik teks untuk edit, klik foto untuk ganti</span>
+  <button type="button" class="btn btn-sm btn-primary" id="photoBtn">Ganti foto produk</button>
+  <button type="button" class="btn btn-sm btn-primary" id="saveBtn">Simpan</button>
+  <button type="button" class="btn btn-sm btn-glass" id="resetBtn">Reset</button>
+  <button type="button" class="btn btn-sm btn-glass" id="logoutBtn">Keluar</button>
+</div>
+
+<!-- Login admin -->
+<div class="modal" id="loginModal" hidden role="dialog" aria-modal="true" aria-labelledby="loginTitle">
+  <form class="glass modal-box" id="loginForm" autocomplete="off">
+    <h3 id="loginTitle">Admin Login</h3>
+    <input type="password" id="adminPassword" placeholder="Kata sandi" required>
+    <p class="error" id="loginError" role="alert"></p>
+    <div class="modal-actions">
+      <button type="button" class="btn btn-sm btn-glass" id="cancelLogin">Batal</button>
+      <button type="submit" class="btn btn-sm btn-primary">Masuk</button>
+    </div>
+  </form>
+</div>
+
+<!-- Pesan: notif pembayaran + bukti transfer -->
+<div class="modal" id="orderModal" hidden role="dialog" aria-modal="true" aria-labelledby="orderTitle">
+  <div class="glass modal-box order-box">
+    <h3 id="orderTitle">Pembayaran</h3>
+
+    <div class="order-sum">
+      <img data-img="product" data-c1="#ff3d9a" data-c2="#6d4cff" alt="">
+      <div>
+        <strong id="orderName"></strong>
+        <span id="orderPrice"></span>
+      </div>
+    </div>
+
+    <div class="notice" role="note">
+      <b>Info pembayaran</b>
+      <p id="orderPay"></p>
+    </div>
+
+    <div class="reminder" role="note">
+      <b>Pengingat bukti transfer</b>
+      <p>Untuk memesan, kirim bukti transfer di chat WhatsApp.</p>
+    </div>
+
+    <div class="order-actions">
+      <button type="button" class="btn btn-glass" id="orderCancel">Batalkan</button>
+      <button type="button" class="btn btn-primary" id="orderGo">Pesan</button>
+    </div>
+    <p class="order-hint">Tombol Pesan langsung membuka chat WhatsApp admin.</p>
+  </div>
+</div>
+
+<input type="file" id="fileInput" accept="image/*" hidden>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+(() => {
+  'use strict';
+
+  /* ========== 1. CONFIG ========== */
+  const CONFIG = {
+    adminPassword: 'ataaa72',
+    whatsapp: '6282194907502',      // format internasional, tanpa + atau 0 di depan
+    storageKey: 'taaxz-store-v2'
+  };
+
+  // Tambah produk = tambah satu baris di array ini
+  const PRODUCTS = [
+    { id:'p1', name:'Alight Motion Premium 1 Tahun', desc:'Ekspor tanpa watermark dan akses efek premium selama 12 bulan.', price:'Rp 15.000', c1:'#ff3d9a', c2:'#6d4cff' }
+  ];
+
+  /* ========== 2. Helpers ========== */
+  const $  = (sel, root = document) => root.querySelector(sel);
+  const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
+
+  const state = { admin:false, dirty:false, data:loadSaved() };
+  const defaults = { text:{} };
+
+  function loadSaved(){
+    try{
+      const saved = JSON.parse(localStorage.getItem(CONFIG.storageKey));
+      if (saved) return { text: saved.text || {}, img: saved.img || {} };
+      // Versi lama: bawa fotonya saja, teks memakai bawaan terbaru
+      const old = JSON.parse(localStorage.getItem('taaxz-store-v1'));
+      return { text:{}, img: old?.img || {} };
+    }catch{
+      return { text:{}, img:{} };
+    }
+  }
+
+  // Gambar bawaan (SVG) supaya tidak bergantung file eksternal
+  function art(c1, c2){
+    const svg = `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'>
+      <defs>
+        <linearGradient id='g' x1='0' y1='0' x2='1' y2='1'>
+          <stop offset='0' stop-color='${c1}'/><stop offset='1' stop-color='${c2}'/>
+        </linearGradient>
+        <linearGradient id='s' x1='0' y1='0' x2='0' y2='1'>
+          <stop offset='0' stop-color='rgba(255,255,255,.55)'/><stop offset='1' stop-color='rgba(255,255,255,.08)'/>
+        </linearGradient>
+      </defs>
+      <rect width='600' height='600' fill='url(#g)'/>
+      <circle cx='500' cy='90' r='130' fill='rgba(34,211,238,.45)'/>
+      <circle cx='70' cy='540' r='150' fill='rgba(255,255,255,.14)'/>
+      <rect x='90' y='130' width='420' height='250' rx='34' fill='url(#s)' stroke='rgba(255,255,255,.7)' stroke-width='2'/>
+      <circle cx='300' cy='255' r='52' fill='#fff'/>
+      <path d='M286 229L328 255L286 281Z' fill='${c2}'/>
+      <rect x='90' y='420' width='420' height='12' rx='6' fill='rgba(255,255,255,.35)'/>
+      <rect x='90' y='452' width='270' height='12' rx='6' fill='rgba(255,255,255,.6)'/>
+      <rect x='90' y='484' width='340' height='12' rx='6' fill='rgba(255,255,255,.35)'/>
+      <path d='M232 458l9-9 9 9-9 9z' fill='#fff'/>
+      <path d='M322 490l9-9 9 9-9 9z' fill='#fff'/>
+    </svg>`;
+    return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
+  }
+
+  let toastTimer;
+  function toast(msg){
+    const t = $('#toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => t.classList.remove('show'), 3200);
+  }
+
+  /* ========== 3. Render katalog + terapkan konten tersimpan ========== */
+  $('#productGrid').innerHTML = PRODUCTS.map(p => `
+    <article class="glass card">
+      <div class="img-wrap">
+        <img data-img="product" data-c1="${p.c1}" data-c2="${p.c2}" alt="${p.name}" loading="lazy">
+      </div>
+      <div class="card-body">
+        <h3 data-edit="${p.id}-name">${p.name}</h3>
+        <p class="dim" data-edit="${p.id}-desc">${p.desc}</p>
+        <div class="card-foot">
+          <span class="price" data-edit="${p.id}-price">${p.price}</span>
+          <button type="button" class="btn btn-primary btn-sm" data-buy>Pesan sekarang</button>
+        </div>
+      </div>
+    </article>`).join('');
+
+  // Simpan teks bawaan dulu (dipakai untuk fitur Reset)
+  $$('[data-edit]').forEach(el => defaults.text[el.dataset.edit] = el.textContent);
+
+  // Harga di hero & bar HP mengikuti harga di kartu produk
+  function syncMirrors(){
+    const price = $('[data-edit="p1-price"]').textContent.trim();
+    $$('[data-mirror="price"]').forEach(el => el.textContent = price);
+  }
+
+  function applyContent(){
+    $$('[data-edit]').forEach(el => {
+      const key = el.dataset.edit;
+      el.textContent = state.data.text[key] ?? defaults.text[key];
+    });
+    $$('img[data-img]').forEach(img => {
+      img.src = state.data.img[img.dataset.img] || art(img.dataset.c1, img.dataset.c2);
+    });
+    syncMirrors();
+  }
+  applyContent();
+
+  /* ========== 4. Admin mode ========== */
+  function setAdmin(on){
+    state.admin = on;
+    document.body.classList.toggle('admin', on);
+    $('#adminBar').hidden = !on;
+    $$('[data-edit]').forEach(el =>
+      on ? el.setAttribute('contenteditable','true') : el.removeAttribute('contenteditable')
+    );
+  }
+
+  const modal = $('#loginModal'), pw = $('#adminPassword'), err = $('#loginError');
+  const openModal  = () => { modal.hidden = false; err.textContent = ''; pw.value = ''; pw.focus(); };
+  const closeModal = () => { modal.hidden = true; };
+
+  $('#adminLink').addEventListener('click', () => { if (!state.admin) openModal(); });
+  $('#cancelLogin').addEventListener('click', closeModal);
+  modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+
+  $('#loginForm').addEventListener('submit', e => {
+    e.preventDefault();
+    if (pw.value === CONFIG.adminPassword){
+      closeModal();
+      setAdmin(true);
+      toast('Mode admin aktif');
+    }else{
+      err.textContent = 'Kata sandi salah.';
+      pw.select();
+    }
+  });
+
+  $('#saveBtn').addEventListener('click', () => {
+    $$('[data-edit]').forEach(el => state.data.text[el.dataset.edit] = el.textContent.trim());
+    try{
+      localStorage.setItem(CONFIG.storageKey, JSON.stringify(state.data));
+      state.dirty = false;
+      syncMirrors();
+      toast('Perubahan tersimpan ✓');
+    }catch{
+      toast('Gagal menyimpan: penyimpanan browser penuh. Pakai foto yang lebih kecil.');
+    }
+  });
+
+  $('#resetBtn').addEventListener('click', () => {
+    if (!confirm('Kembalikan semua konten ke bawaan?')) return;
+    localStorage.removeItem(CONFIG.storageKey);
+    state.data = { text:{}, img:{} };
+    state.dirty = false;
+    applyContent();
+    toast('Konten dikembalikan ke bawaan');
+  });
+
+  $('#logoutBtn').addEventListener('click', () => {
+    if (state.dirty && !confirm('Ada perubahan yang belum disimpan. Keluar tanpa menyimpan?')) return;
+    state.data = loadSaved();   // buang perubahan yang belum disimpan
+    state.dirty = false;
+    applyContent();
+    setAdmin(false);
+  });
+
+  /* ========== 5. Edit teks & foto produk ========== */
+  document.addEventListener('input', e => {
+    if (!e.target.closest('[data-edit]')) return;
+    state.dirty = true;
+    if (e.target.closest('[data-edit="p1-price"]')) syncMirrors();
+  });
+
+  // Enter = selesai edit, Esc = tutup modal
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape'){ closeModal(); closeOrder(); }
+    if (state.admin && e.key === 'Enter' && e.target.closest('[data-edit]') && !e.target.closest('[data-edit="pay-info"]')){
+      e.preventDefault();
+      e.target.blur();
+    }
+  });
+
+  // Paste sebagai teks polos agar styling tidak ikut masuk
+  document.addEventListener('paste', e => {
+    if (!state.admin || !e.target.closest('[data-edit]')) return;
+    e.preventDefault();
+    const text = (e.clipboardData || window.clipboardData).getData('text/plain');
+    document.execCommand('insertText', false, text);
+  });
+
+  // Ganti foto produk (satu foto dipakai di hero, kartu produk, dan jendela pesan)
+  const fileInput = $('#fileInput');
+
+  $('#photoBtn').addEventListener('click', () => fileInput.click());
+
+  fileInput.addEventListener('change', () => {
+    const file = fileInput.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = () => {
+      const img = new Image();
+      img.onload = () => {
+        const MAX = 900;
+        const scale = Math.min(1, MAX / Math.max(img.width, img.height));
+        const c = document.createElement('canvas');
+        c.width  = Math.round(img.width * scale);
+        c.height = Math.round(img.height * scale);
+        const ctx = c.getContext('2d');
+        ctx.fillStyle = '#fff';
+        ctx.fillRect(0, 0, c.width, c.height);
+        ctx.drawImage(img, 0, 0, c.width, c.height);
+        const url = c.toDataURL('image/jpeg', 0.82);
+        state.data.img.product = url;
+        $$('img[data-img="product"]').forEach(i => i.src = url);
+        state.dirty = true;
+        toast('Foto diganti. Tekan Simpan agar tersimpan.');
+      };
+      img.src = reader.result;
+    };
+    reader.readAsDataURL(file);
+    fileInput.value = '';
+  });
+
+  /* ========== 6. Alur pesan: info pembayaran -> Pesan (langsung ke WhatsApp) / Batalkan ========== */
+  const orderModal = $('#orderModal');
+
+  function openOrder(){
+    const card = $('.card');
+    const price = $('[data-edit$="-price"]', card).textContent.trim();
+    $('#orderName').textContent  = $('[data-edit$="-name"]', card).textContent.trim();
+    $('#orderPrice').textContent = price;
+    $('#orderPay').textContent   = 'Total bayar ' + price + '\n' + $('[data-edit="pay-info"]').textContent.trim();
+    orderModal.hidden = false;
+    document.body.style.overflow = 'hidden';
+  }
+
+  // Batalkan = tutup jendela, pengunjung tetap di beranda
+  function closeOrder(){
+    if (orderModal.hidden) return;
+    orderModal.hidden = true;
+    document.body.style.overflow = '';
+  }
+
+  $('#orderCancel').addEventListener('click', () => {
+    closeOrder();
+    toast('Pesanan dibatalkan');
+  });
+  orderModal.addEventListener('click', e => { if (e.target === orderModal) closeOrder(); });
+
+  // Pesan = langsung buka WhatsApp admin
+  $('#orderGo').addEventListener('click', () => {
+    const name  = $('#orderName').textContent;
+    const price = $('#orderPrice').textContent;
+    const msg = `Halo taaxz store, saya mau pesan ${name} (${price}). Mohon info pembayarannya (DANA / QRIS / COD). Bukti transfer saya kirim di chat ini.`;
+    window.open(`https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(msg)}`, '_blank', 'noopener');
+    closeOrder();
+    toast('Kirim bukti transfer di chat WhatsApp ya.');
+  });
+
+  /* ========== 7. Klik global (foto, tombol pesan, link saat edit) ========== */
+  document.addEventListener('click', e => {
+    // Mode admin: klik foto = ganti foto, tombol pesan dinonaktifkan
+    if (state.admin){
+      if (e.target.closest('a [data-edit]')) e.preventDefault();
+      if (e.target.closest('[data-buy]')) return;
+      if (e.target.closest('.img-wrap')) fileInput.click();
+      return;
+    }
+
+    // Mode pengunjung: tombol Pesan -> jendela pembayaran
+    if (e.target.closest('[data-buy]')) openOrder();
+  });
+})();
+</script>
+</body>
+</html>
